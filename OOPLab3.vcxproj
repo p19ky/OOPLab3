@@ -148,11 +148,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BinaryTree.cpp" />
+    <ClCompile Include="myTests.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="OOPLab3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinaryTree.h" />
+    <ClInclude Include="myTests.h" />
     <ClInclude Include="Node.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

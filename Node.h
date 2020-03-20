@@ -23,6 +23,4 @@ public:
 
     //copy constructor
     Node(const Node& other);
-
-
 };
