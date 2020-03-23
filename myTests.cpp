@@ -32,11 +32,6 @@ void TestCount()
     BT.root->left = new Node(2);
     BT.root->right = new Node(3);
     BT.root->left->left = new Node(4);
-    BT.root->left->right = new Node(5);
-    BT.root->right->left = new Node(6);
-    BT.root->right->right = new Node(7);
-    BT.root->left->left->left = new Node(8);
-    BT.root->left->left->right = new Node(9);
 
     cout << "\nNumber of nodes: " << BT.countNodes(BT.root);
     cout << "\nNumber of edges: " << BT.countEdges(BT.root);
