@@ -110,14 +110,17 @@ int BinaryTree::countEdges(Node* n)
 
 int BinaryTree::height(Node* n)
 {
-    int h = 1;
+    int h = 1,h_max = 1;
 
     if (n->left != NULL)
         h += height(n->left);
     else if (n->right != NULL)
         h += height(n->right);
 
-    return h;
+    if (h > h_max)
+        h_max = h;
+
+    return h_max;
 }
 
 Node* BinaryTree::minValueNode(Node* node)
