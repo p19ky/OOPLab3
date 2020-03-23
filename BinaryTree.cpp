@@ -19,6 +19,23 @@ BinaryTree::~BinaryTree()
     delete root;
 }
 
+Node* BinaryTree::build_tree(int arr[], Node* root, int i, int n)
+{
+    // Base case for recursion 
+    if (i < n)
+    {
+        Node* temp = new Node(arr[i]);
+        root = temp;
+
+        // insert left child 
+        root->left = build_tree(arr, root->left, 2 * i + 1, n);
+
+        // insert right child 
+        root->right = build_tree(arr, root->right, 2 * i + 2, n);
+    }
+    return root;
+}
+
 bool BinaryTree::isEmpty()
 {
     if (root == NULL)

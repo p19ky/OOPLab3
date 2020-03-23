@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Node.h"
-
+#include <vector>
 class Node;
 using namespace std;
 
@@ -27,6 +27,9 @@ public:
     bool isEmpty();
 
     Node* insert(Node* node, int data);
+
+    //builds the binary tree
+    Node* build_tree(int arr[], Node* root, int i, int n);
 
     /* Given a binary tree, print its nodes according to the "bottom-up" postorder traversal. */
     void printPostorder(Node* node);

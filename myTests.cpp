@@ -2,17 +2,15 @@
 #include "Node.h"
 #include "BinaryTree.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 
 void TestInPostPreOrder()
 {
     BinaryTree BT;
-    BT.root = new Node(1);
-
-    BT.root->left = new Node(2);
-    BT.root->right = new Node(3);
-    BT.root->left->left = new Node(4);
-    BT.root->left->right = new Node(5);
+    int arr[] = { 1, 2, 3, 4, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    BT.root = BT.build_tree(arr, BT.root, 0, n);
 
     cout << "\nPreorder traversal of binary tree is \n";
     BT.printPreorder(BT.root);
@@ -26,12 +24,12 @@ void TestInPostPreOrder()
 
 void TestCount()
 {
-    BinaryTree BT;
-    BT.root = new Node(1);
+    cout << "\n\nTest build and count\n";
 
-    BT.root->left = new Node(2);
-    BT.root->right = new Node(3);
-    BT.root->left->left = new Node(4);
+    BinaryTree BT;
+    int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    BT.root = BT.build_tree(arr, BT.root, 0, n);
 
     cout << "\nNumber of nodes: " << BT.countNodes(BT.root);
     cout << "\nNumber of edges: " << BT.countEdges(BT.root);
