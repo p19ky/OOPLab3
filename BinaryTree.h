@@ -9,14 +9,21 @@ class BinaryTree
 {
 public:
 
+    friend class Node;
+
+private:
+
     // Root of Binary Tree 
     Node* root;
-    friend class Node;
 
 public:
 
+    Node* getRoot() { return root; }
+
     //Default Constructor
     BinaryTree();
+
+    BinaryTree(int arr[], int i, int n);
 
     //Constructor function to assign data to the root node of the Tree
     BinaryTree(int data);
@@ -52,4 +59,5 @@ public:
     Node* minValueNode(Node* node);
 
     Node* deleteNode(Node* root, int data);
+
 };

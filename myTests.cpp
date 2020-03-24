@@ -7,47 +7,44 @@ using namespace std;
 
 void TestInPostPreOrder()
 {
-    BinaryTree BT;
-    int arr[] = { 1, 2, 3, 4, 5};
+    int arr[] = { 1, 2, 3, 4, 5 };
     int n = sizeof(arr) / sizeof(arr[0]);
-    BT.root = BT.build_tree(arr, BT.root, 0, n);
+    BinaryTree BT(arr, 0, n);
 
     cout << "\nPreorder traversal of binary tree is \n";
-    BT.printPreorder(BT.root);
+    BT.printPreorder(BT.getRoot());
 
     cout << "\nInorder traversal of binary tree is \n";
-    BT.printInorder(BT.root);
+    BT.printInorder(BT.getRoot());
 
     cout << "\nPostorder traversal of binary tree is \n";
-    BT.printPostorder(BT.root);
+    BT.printPostorder(BT.getRoot());
 }
 
 void TestCount()
 {
     cout << "\n\nTest build and count\n";
 
-    BinaryTree BT;
-    int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
     int n = sizeof(arr) / sizeof(arr[0]);
-    BT.root = BT.build_tree(arr, BT.root, 0, n);
+    BinaryTree BT(arr, 0, n);
 
-    cout << "\nNumber of nodes: " << BT.countNodes(BT.root);
-    cout << "\nNumber of edges: " << BT.countEdges(BT.root);
-    cout << "\nHeight: " << BT.height(BT.root);
+    cout << "\nNumber of nodes: " << BT.countNodes(BT.getRoot());
+    cout << "\nNumber of edges: " << BT.countEdges(BT.getRoot());
+    cout << "\nHeight: " << BT.height(BT.getRoot());
 }
 
 void TestInsert()
 {
     BinaryTree BT;
-    Node* root = new Node(1);
-    BT.root = root;
-    BT.insert(root, 4);
-    BT.insert(root, 2);
-    BT.insert(root, 3);
-    BT.insert(root, 6);
-    BT.insert(root, 5);
-    BT.deleteNode(root, 5);
-    BT.deleteNode(root, 4);
+    BT.insert(BT.getRoot(), 1);
+    BT.insert(BT.getRoot(), 4);
+    BT.insert(BT.getRoot(), 2);
+    BT.insert(BT.getRoot(), 3);
+    BT.insert(BT.getRoot(), 6);
+    BT.insert(BT.getRoot(), 5);
+    BT.deleteNode(BT.getRoot(), 5);
+    BT.deleteNode(BT.getRoot(), 4);
 
     cout << "\nTest insert and delete";
 }

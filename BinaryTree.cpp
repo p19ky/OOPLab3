@@ -14,6 +14,11 @@ BinaryTree::BinaryTree(int data)
     root = new Node(data);
 }
 
+BinaryTree::BinaryTree(int arr[], int i, int n)
+{
+    this->root = build_tree(arr,this->root,i,n);
+}
+
 BinaryTree::~BinaryTree()
 {
     delete root;
