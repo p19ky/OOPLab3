@@ -25,7 +25,7 @@ void TestCount()
 {
     cout << "\n\nTest build and count\n";
 
-    int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    int arr[] = { 1, 2, 3 };
     int n = sizeof(arr) / sizeof(arr[0]);
     BinaryTree BT(arr, 0, n);
 

@@ -132,17 +132,20 @@ int BinaryTree::countEdges(Node* n)
 
 int BinaryTree::height(Node* n)
 {
-    int h = 1,h_max = 1;
+    if (n == NULL)
+        return 0;
+    else
+    {
+        /* compute the depth of each subtree */
+        int lDepth = height(n->left);
+        int rDepth = height(n->right);
 
-    if (n->left != NULL)
-        h += height(n->left);
-    else if (n->right != NULL)
-        h += height(n->right);
-
-    if (h > h_max)
-        h_max = h;
-
-    return h_max;
+        /* use the larger one */
+        if (lDepth > rDepth)
+            return(lDepth + 1);
+        else return(rDepth + 1);
+    }
+     
 }
 
 Node* BinaryTree::minValueNode(Node* node)
